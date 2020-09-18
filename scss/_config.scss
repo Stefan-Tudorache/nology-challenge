@@ -1,0 +1,15 @@
+// Variables
+$container-width: 1150px;
+$primary-color: #93cb52;
+$secondary-color: #ffbc00;
+$light-color: #f4f4f4;
+$dark-color: #333;
+
+// Set text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #333;
+  } @else {
+    @return #93cb52;
+  }
+}

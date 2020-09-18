@@ -1,0 +1,355 @@
+@import "config";
+@import "utilities";
+
+* {
+  margin: 0;
+  padding: 0;
+  // box-sizing: border-box;
+}
+
+body {
+  font-family: "Dosis", sans-serif;
+  line-height: 1.6;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+#logo {
+  width: 70px;
+  height: 70px;
+  color: #fff;
+  text-transform: uppercase;
+  padding-left: 120px;
+}
+
+// Navigation
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: $dark-color;
+  opacity: 0.9;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  transition: 0.5s;
+
+  .left-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .timer {
+      padding-left: 20px;
+      color: $primary-color;
+      font-weight: 600;
+    }
+  }
+
+  ul {
+    display: flex;
+    padding-right: 200px;
+    align-items: center;
+  }
+  li {
+    padding: 1rem 1.5rem;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 3px transparent solid;
+    transition: all 0.4s;
+
+    &:hover {
+      border-color: $primary-color;
+      color: $secondary-color;
+    }
+  }
+  &.top {
+    background: transparent;
+  }
+}
+
+// Header
+#header {
+  &-home {
+    height: 100vh;
+    position: relative;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+
+    &::before {
+      content: "";
+      background: url("/stefan_website/img/showcase2.jpg") no-repeat center
+        center / cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+
+  &-content {
+    text-align: center;
+    padding-top: 17%;
+
+    & h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+    }
+  }
+
+  &-inner {
+    height: 5rem;
+    background: url("/stefan_website/img/showcase2.jpg") no-repeat 20% 25% /
+      cover;
+    border-bottom: 3px solid $primary-color;
+  }
+}
+
+// About
+#about {
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    padding: 0rem 3rem;
+    overflow: hidden;
+
+    div.show {
+      transform: none;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.7s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+
+    &-right {
+      transform: translateX(-200px);
+    }
+    &-left {
+      transform: translateX(200px);
+    }
+    i {
+      margin-bottom: 2rem;
+      color: $primary-color;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+// Skills Bar
+#skills {
+  margin-bottom: 2rem;
+
+  .progress {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    height: 20px;
+    background: $light-color;
+    border-radius: 5px;
+    margin-bottom: 0.3rem;
+
+    &:last-child {
+      margin-bottom: 3rem;
+    }
+
+    div {
+      height: 100%;
+      color: $light-color;
+      text-align: center;
+      background: $primary-color;
+    }
+
+    p {
+      color: green;
+      font-weight: 600;
+    }
+  }
+}
+
+// Skills Next
+#next-skills {
+  .next {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 350px;
+    grid-gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+
+    &-icon {
+      border-radius: 50%;
+      background-color: $dark-color;
+      color: set-text-color($dark-color);
+      padding: 2rem;
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+      text-align: center;
+      position: relative;
+      transition: all 0.7s;
+
+      &:hover {
+        background-color: $primary-color;
+        color: set-text-color($primary-color);
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+
+        .next-step {
+          background-color: $dark-color;
+          color: set-text-color($dark-color);
+        }
+      }
+    }
+
+    &-step {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 30px;
+      background-color: $primary-color;
+      color: set-text-color($primary-color);
+      border-radius: 50%;
+      height: 10px;
+      width: 10px;
+      line-height: 10px;
+      padding: 1rem;
+      transition: all 0.8s;
+    }
+  }
+}
+
+// Contact
+.contact-form {
+  .text-fields {
+    display: grid;
+    grid-template-areas:
+      "name email"
+      "subject phone"
+      "message message";
+    grid-gap: 1.2rem;
+    margin: 1.3rem;
+
+    // Grid Areas
+    .name-input {
+      grid-area: name;
+    }
+    .subject-input {
+      grid-area: subject;
+    }
+    .email-input {
+      grid-area: email;
+    }
+    .phone-input {
+      grid-area: phone;
+    }
+    .message-input {
+      grid-area: message;
+      height: 100px;
+    }
+
+    .text-input {
+      padding: 0.5rem 1rem;
+    }
+
+    input {
+      border: 1px solid $dark-color;
+      border-radius: 5px;
+    }
+
+    textarea {
+      border: 1px solid $dark-color;
+      border-radius: 5px;
+    }
+  }
+  input:focus {
+    outline-color: $primary-color;
+  }
+  textarea:focus {
+    outline-color: $primary-color;
+  }
+
+  button[type="submit"] {
+    width: 50%;
+    font-weight: 700;
+  }
+}
+
+.contact-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  color: $primary-color;
+}
+
+// Footer
+
+#main-footer {
+  color: $light-color;
+  height: 5rem;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    align-items: center;
+    p {
+      margin-left: 3rem;
+    }
+  }
+  .footer-social {
+    margin-right: 2rem;
+
+    .fab {
+      color: $light-color;
+      margin-right: 1rem;
+      border: 2px $light-color solid;
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      text-align: center;
+      padding: 0.5rem;
+      transition: all 0.5s;
+
+      &:hover {
+        background: $primary-color;
+      }
+    }
+  }
+}
+
+// Import Media
+
+@import "media";
