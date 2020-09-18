@@ -151,7 +151,7 @@ img {
   color: #fff; }
   #header-home::before {
     content: "";
-    background: url("/stefan_website/img/showcase2.jpg") no-repeat center center/cover;
+    background: url("../img/showcase2.jpg") no-repeat center center/cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -168,7 +168,7 @@ img {
 
 #header-inner {
   height: 5rem;
-  background: url("/stefan_website/img/showcase2.jpg") no-repeat 20% 25%/cover;
+  background: url("../img/showcase2.jpg") no-repeat 20% 25%/cover;
   border-bottom: 3px solid #93cb52; }
 
 #about-container {
