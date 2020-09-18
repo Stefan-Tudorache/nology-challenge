@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Stefan Tudorache | Contact Me</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header-inner">
+      <nav id="main-nav" class="top">
+        <div class="left-side">
+          <div class="timer">
+            <p id="time"></p>
+          </div>
+          <img src="/stefan_website/img/logo-0.png" alt="" id="logo" />
+        </div>
+        <ul>
+          <li><a href="index.html#header-home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Contact Form -->
+    <section class="contact-form text-center py-3 container">
+      <h2>Contact Me</h2>
+      <div class="bottom-line"></div>
+      <p class="lead">Here is how you can reach me</p>
+      <form>
+        <div class="text-fields">
+          <input type="text" class="text-input name-input" placeholder="Name" />
+          <input
+            type="text"
+            class="text-input subject-input"
+            placeholder="Subject"
+          />
+          <input
+            type="email"
+            class="text-input email-input"
+            placeholder="Email Adress"
+          />
+          <input
+            type="text"
+            class="text-input phone-input"
+            placeholder="Phone Number"
+          />
+          <textarea
+            class="text-input message-input"
+            placeholder="Enter Message"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn-dark">Submit</button>
+      </form>
+    </section>
+
+    <!-- Contact Details -->
+    <section class="py-3 bg-dark">
+      <div class="contact-details container">
+        <div>
+          <i class="fas fa-envelope fa-2x"></i>
+          <h3>Email</h3>
+          <p>stefantudorache90@yahoo.com</p>
+        </div>
+        <div>
+          <i class="fas fa-phone fa-2x"></i>
+          <h3>Phone</h3>
+          <p>0032-487-25-40-49</p>
+        </div>
+        <div>
+          <i class="fas fa-hotel fa-2x"></i>
+          <h3>Adress</h3>
+          <p>27 Alfred Dubois, 1080 Bruxelles</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-primary py-3">
+      <div class="container tagline text-center">
+        <h1>Let Me Know What You Think !</h1>
+      </div>
+    </section>
+
+    <footer id="main-footer" class="bg-dark">
+      <section class="footer-content container">
+        <p>Copyright &copy; 2020. All Rights Reserved</p>
+        <section class="footer-social">
+          <a
+            href="https://www.facebook.com/stefandoru.tudorache/"
+            target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://www.linkedin.com/feed/" target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </section>
+      </section>
+    </footer>
+
+    <script>
+      const navbar = document.getElementById("main-nav");
+      let scrolled = false;
+
+      window.onscroll = function () {
+        if (window.pageYOffset > 50) {
+          navbar.classList.remove("top");
+          if (!scrolled) {
+            navbar.style.transform = "translateY(-70px)";
+          }
+          setTimeout(function () {
+            navbar.style.transform = "translateY(0)";
+            scrolled = true;
+          }, 200);
+        } else {
+          navbar.classList.add("top");
+          scrolled = false;
+        }
+      };
+    </script>
+
+    <script>
+      const counter = setInterval(myCounter, 1000);
+
+      function myCounter() {
+        let date = new Date();
+        let timer = date.toLocaleTimeString();
+        document.getElementById("time").innerHTML = timer;
+      }
+    </script>
+  </body>
+</html>
