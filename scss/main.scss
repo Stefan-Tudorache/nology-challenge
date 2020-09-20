@@ -13,6 +13,10 @@ body {
   background: #fff;
 }
 
+p {
+  font-family: "Roboto", sans-serif;
+}
+
 a {
   text-decoration: none;
   color: $dark-color;
@@ -123,6 +127,8 @@ img {
 
 // About
 #about {
+  padding-bottom: 10px;
+
   &-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -130,7 +136,7 @@ img {
     padding: 0rem 3rem;
     overflow: hidden;
 
-    div.show {
+    article.show {
       transform: none;
       visibility: visible;
       opacity: 1;
@@ -158,7 +164,7 @@ img {
       color: $primary-color;
     }
     p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
   }
 }
@@ -197,7 +203,6 @@ img {
 // Skills Next
 #next-skills {
   .next {
-    box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 350px;

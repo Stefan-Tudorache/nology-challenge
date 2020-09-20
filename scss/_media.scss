@@ -27,13 +27,14 @@
 
   #header {
     &-home {
-      height: 25rem;
+      height: 100vh;
     }
 
     &-content {
       & h1 {
-        padding-top: 40px;
-        font-size: 2rem;
+        padding-top: 20%;
+        font-size: 3rem;
+        margin-bottom: 40px;
       }
     }
   }
@@ -111,19 +112,14 @@
     }
   }
   #header {
-    &-home {
-      height: 11rem;
-      border-bottom: 3px solid $primary-color;
-      background-position: 20% 25%;
-    }
     &-content {
-      padding-top: 15%;
+      padding-top: 60%;
       & h1 {
-        font-size: 1rem;
-        padding-top: 30px;
+        font-size: 1.5rem;
+        margin-bottom: 30px;
       }
-      & a {
-        display: none;
+      & p {
+        margin-bottom: 30px;
       }
     }
     &-inner {
@@ -202,6 +198,37 @@
   .tagline {
     h1 {
       font-size: 2rem;
+    }
+  }
+}
+
+// Landscape Mode
+@media (max-height: 550px) {
+  #header {
+    &-content {
+      padding-top: 10px;
+      & h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+      & p {
+        margin-bottom: 20px;
+      }
+    }
+    &-inner {
+      height: 5rem;
+    }
+  }
+}
+
+// Article Positioning
+@media (min-width: 901px) and (max-width: 1200px) {
+  #next-skills {
+    .lead {
+      padding: 0px 20px;
+    }
+    .next {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

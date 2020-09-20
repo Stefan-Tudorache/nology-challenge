@@ -66,7 +66,7 @@ function init() {
 
 // Add Class Show
 
-const items = document.querySelectorAll("#about-container div");
+const items = document.querySelectorAll("#about-container article");
 
 const isInViewport = (el) => {
   const rect = el.getBoundingClientRect();
