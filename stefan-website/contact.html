@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
+    <title>Contact Me</title>
+  </head>
+  <body class="custom">
+    <section id="navigation-about">
+      <div class="logo-about">
+        <img src="img/logo-0.png" alt="this is my logo" />
+      </div>
+      <nav>
+        <ul>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Contact Form -->
+    <h1 class="lead text-center my-1" data-aos="zoom-in">Contact Me</h1>
+    <div class="underline"></div>
+
+    <section class="contact-page">
+      <section class="left-side">
+        <h2 class="text-center my-2">Here is how i can reach you</h2>
+        <form>
+          <div class="text-fields" data-aos="zoom-in">
+            <input
+              type="text"
+              name="name"
+              aria-label="Name"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="text"
+              name="subject"
+              aria-label="Subject"
+              placeholder="Subject"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              aria-label="email"
+              placeholder="Email Adress"
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              aria-label="Phone Number"
+              placeholder="Phone Number"
+            />
+            <textarea
+              name="message"
+              aria-label="Message"
+              placeholder="Enter Message"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="courgette">Submit</button>
+        </form>
+      </section>
+
+      <!-- Contact Info -->
+
+      <section class="right-side">
+        <h2 class="text-center my-2">Here is how you can reach me</h2>
+        <div class="contact-details bg-dark" data-aos="zoom-in">
+          <div class="email">
+            <span class="fas fa-envelope fa-2x"></span>
+            <h3 class="courgette my-1">Email</h3>
+            <p>stefantudorache90@yahoo.com</p>
+          </div>
+          <div class="phone">
+            <span class="fas fa-phone fa-2x"></span>
+            <h3 class="courgette my-1">Phone</h3>
+            <p>0032-487-25-40-49</p>
+          </div>
+          <div class="adress">
+            <span class="fas fa-hotel fa-2x"></span>
+            <h3 class="courgette my-1">Adress</h3>
+            <p>27 Alfred Dubois, 1080 Bruxelles</p>
+          </div>
+        </div>
+        <a
+          href="https://stefanwebdev.com/index.html#header-home"
+          target="_blank"
+          class="courgette"
+          >Find Out More</a
+        >
+      </section>
+    </section>
+    <h4 class="comment courgette text-center">
+      Let's Build Something Together !
+    </h4>
+
+    <footer class="footer bg-dark">
+      <section class="footer-content container">
+        <p>Copyright &copy; 2020. All Rights Reserved</p>
+        <section class="footer-social">
+          <a
+            href="https://www.facebook.com/stefandoru.tudorache/"
+            target="_blank"
+            ><span class="fab fa-facebook"></span
+          ></a>
+          <a href="https://www.linkedin.com/feed/" target="_blank"
+            ><span class="fab fa-linkedin"></span
+          ></a>
+          <a href="https://twitter.com/home" target="_blank"
+            ><span class="fab fa-twitter"></span
+          ></a>
+          <a href="https://www.instagram.com/stefan.damaskinos/" target="_blank"
+            ><span class="fab fa-instagram"></span
+          ></a>
+        </section>
+      </section>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 700, easing: "ease-in", delay: 100 });
+    </script>
+  </body>
+</html>
