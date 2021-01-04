@@ -1,44 +1,64 @@
-.container {
-  max-width: $container-width;
-  margin: auto;
-  overflow: hidden;
-  padding: 0px 1.5rem;
+@import "mixin_variables";
+
+p {
+  line-height: 1.5rem;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: $light-color;
+}
+
+.courgette {
+  font-family: "Courgette", cursive;
 }
 
 .lead {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  font-size: 3rem;
 }
 
-span {
-  color: $primary-color;
+.comment {
+  font-size: 3rem;
+  text-decoration: underline $primary-color;
+  margin: 23.5px 0;
 }
 
-h1 {
-  font-size: 2.5rem;
+.underline {
+  height: 2px;
+  width: 8rem;
+  background-color: $primary-color;
+  display: block;
+  margin: 0 auto 3rem auto;
 }
 
-h2,
-h3,
-h4 {
-  text-transform: uppercase;
+.container {
+  max-width: 1200px;
+  margin: auto;
 }
 
 .py-1 {
   padding: 1rem 0;
 }
+
 .py-2 {
   padding: 2rem 0;
 }
+
 .py-3 {
   padding: 3rem 0;
 }
+
 .my-1 {
   margin: 1rem 0;
 }
+
 .my-2 {
   margin: 2rem 0;
 }
+
 .my-3 {
   margin: 3rem 0;
 }
@@ -60,44 +80,4 @@ h4 {
 .bg-light {
   background: $light-color;
   color: $dark-color;
-}
-
-.bottom-line {
-  height: 2px;
-  width: 10rem;
-  background-color: $primary-color;
-  display: block;
-  margin: 0.5rem auto 3rem auto;
-}
-
-%btn-shared {
-  display: inline-block;
-  border: none;
-  cursor: pointer;
-  padding: 0.8rem 2rem;
-  transition: all 0.5s;
-  border-radius: 5px;
-  font-weight: 600;
-}
-
-.btn {
-  &-light {
-    @extend %btn-shared;
-    background-color: $light-color;
-    color: $dark-color;
-
-    &:hover {
-      background-color: $primary-color;
-    }
-  }
-  &-dark {
-    @extend %btn-shared;
-    background-color: $dark-color;
-    color: $light-color;
-
-    &:hover {
-      background-color: $primary-color;
-      color: set-text-color($primary-color);
-    }
-  }
 }

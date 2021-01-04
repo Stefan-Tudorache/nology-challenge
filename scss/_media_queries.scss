@@ -1,0 +1,358 @@
+@media only screen and (max-width: 520px) {
+  @import "mixin_variables";
+
+  header {
+    #navigation {
+      .logo {
+        display: none;
+      }
+
+      & nav {
+        margin: -20px auto;
+
+        & ul {
+          height: 20vh;
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+
+    & .header-content {
+      position: absolute;
+      left: 8%;
+      bottom: 7%;
+      & article {
+        font-size: 1.2rem;
+        line-height: 1.9rem;
+      }
+    }
+  }
+
+  // Inner Header and About Page
+
+  #navigation-about {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    overflow: hidden;
+
+    &:before {
+      @include overlay;
+    }
+
+    & .logo-about {
+      display: none;
+    }
+
+    & nav ul {
+      box-sizing: border-box;
+      width: 100vw;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0 10px;
+
+      & a {
+        font-size: 16px;
+        padding: 5px;
+        margin: 5px;
+        line-height: 5px;
+      }
+    }
+  }
+
+  .about {
+    & p {
+      font-size: 1.1rem;
+      padding: 0 15px;
+      margin: 10px 0;
+    }
+
+    &-content {
+      & .flex-box {
+        display: block;
+        width: 100%;
+
+        & .about-photo {
+          width: 200px;
+          height: 200px;
+          line-height: 150px;
+          border-radius: 50%;
+          margin: auto;
+        }
+
+        & .about-text {
+          width: 90%;
+          margin: 10px auto;
+          border-top: 2px solid $primary-color;
+          border-left: none;
+          height: 500px;
+        }
+      }
+    }
+  }
+
+  .tools {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px auto;
+
+    & .left-side {
+      width: 90%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    & .middle {
+      display: none;
+    }
+
+    & .right-side {
+      width: 90%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+  // Project Page
+  .project-page {
+    background: $light-color;
+
+    & .items {
+      display: block;
+      background-color: $dark-color;
+      padding: 10px 0;
+
+      & .item {
+        width: 90%;
+        margin: 10px auto;
+      }
+    }
+  }
+
+  // Contact Page
+
+  .custom {
+    width: 100%;
+
+    & .contact-page {
+      display: block;
+      margin: auto;
+      width: 93%;
+
+      & .left-side {
+        width: 95%;
+        margin: auto;
+
+        & .text-fields {
+          gap: 0.6rem;
+          width: 100%;
+          margin: 0;
+
+          & textarea {
+            height: 120px;
+          }
+
+          & input {
+            padding: 0.5rem;
+          }
+        }
+      }
+
+      & .right-side {
+        & .contact-details {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(3, 1fr);
+          margin: auto;
+          padding: 20px 30px;
+
+          & .phone {
+            padding: 20px 0;
+            border: none;
+            border-top: 1px dotted $light-color;
+            border-bottom: 1px dotted $light-color;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 6rem;
+    }
+  }
+}
+
+// Tablet
+
+@media only screen and (min-width: 521px) and (max-width: 1024px) {
+  @import "mixin_variables";
+
+  header {
+    #navigation {
+      & .logo {
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        align-self: center;
+      }
+
+      & nav {
+        display: block;
+        margin: auto;
+        & ul {
+          height: 7rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    & .header-content {
+      left: 5%;
+      bottom: 10%;
+    }
+  }
+
+  // Inner Header and About
+
+  #navigation-about {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    overflow: hidden;
+
+    &::before {
+      @include overlay;
+    }
+
+    & .logo-about {
+      height: 50px;
+      width: 50px;
+      line-height: 50px;
+      align-self: center;
+    }
+  }
+  .about {
+    &-content {
+      & .flex-box {
+        width: 95%;
+      }
+    }
+  }
+
+  .tools {
+    & .right-side {
+      width: 50%;
+    }
+
+    & .left-side {
+      width: 50%;
+    }
+
+    & .middle {
+      display: none;
+    }
+  }
+
+  // Progect Page
+  .project-page {
+    & .items {
+      gap: 0.6rem;
+      margin: 0.6rem;
+    }
+  }
+
+  .custom {
+    width: 100%;
+
+    & .contact-page {
+      display: block;
+      margin: auto;
+      width: 93%;
+
+      & .left-side {
+        width: 100%;
+
+        & .text-fields {
+          gap: 0.6rem;
+          width: 100%;
+          margin: 0;
+
+          & textarea {
+            height: 120px;
+          }
+        }
+      }
+
+      & .right-side {
+        & .contact-details {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(3, 1fr);
+          margin: auto;
+          padding: 20px 30px;
+
+          & .phone {
+            padding: 20px 0;
+            border: none;
+            border-top: 1px dotted $light-color;
+            border-bottom: 1px dotted $light-color;
+          }
+        }
+      }
+    }
+  }
+
+  // Footer
+
+  .footer {
+    &-content {
+      justify-content: space-evenly;
+    }
+  }
+}
+
+@media only screen and (max-width: 321px) {
+  @import "mixin_variables";
+
+  .custom {
+    width: 100%;
+
+    & .contact-page {
+      display: block;
+      margin: auto;
+      width: 93%;
+
+      & .left-side {
+        width: 100%;
+
+        & .text-fields {
+          gap: 0.6rem;
+          width: 100%;
+          margin: 0;
+
+          & textarea {
+            height: 120px;
+          }
+
+          & input {
+            padding: 0.5rem;
+            width: 86%;
+          }
+        }
+      }
+    }
+  }
+}

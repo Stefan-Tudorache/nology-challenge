@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
+    <title>Stefan | Web Dev</title>
+  </head>
+  <body>
+    <header id="home">
+      <section id="navigation">
+        <div class="logo">
+          <img src="img/logo-0.png" alt="this is my logo" />
+        </div>
+        <nav>
+          <ul data-aos="fade-down">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="header-content" data-aos="fade-right">
+        <article>
+          <h3 class="courgette">
+            There is no courage without fear so stop fussing about and do
+            something !
+          </h3>
+        </article>
+      </section>
+    </header>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 700, easing: "ease-in", delay: 100 });
+    </script>
+  </body>
+</html>

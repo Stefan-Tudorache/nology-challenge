@@ -1,340 +1,326 @@
-@import "config";
 @import "utilities";
+@import "mixin_variables";
+@import "projects_grid";
 
 * {
   margin: 0;
   padding: 0;
   // box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
-body {
-  font-family: "Dosis", sans-serif;
-  line-height: 1.6;
-  background: #fff;
-}
+// Main Header
 
-p {
-  font-family: "Roboto", sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: $dark-color;
-}
-
-ul {
-  list-style: none;
-}
-
-img {
+header {
+  height: 100vh;
   width: 100%;
-}
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  color: $light-color;
 
-#logo {
-  width: 70px;
-  height: 70px;
-  color: #fff;
-  text-transform: uppercase;
-  padding-left: 120px;
-}
+  &:before {
+    content: "";
+    background: url("../img/pexels-photo.jpg") no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
 
-// Navigation
-#main-nav {
-  display: flex;
-  justify-content: space-between;
-  background-color: $dark-color;
-  opacity: 0.9;
-  width: 100%;
-  height: 70px;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  transition: 0.5s;
-
-  .left-side {
+  #navigation {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 
-    .timer {
-      padding-left: 20px;
-      color: $primary-color;
-      font-weight: 600;
-    }
-  }
+    & nav {
+      display: flex;
+      margin-right: 100px;
+      align-items: center;
 
-  ul {
-    display: flex;
-    padding-right: 200px;
-    align-items: center;
-  }
-  li {
-    padding: 1rem 1.5rem;
-  }
-  a {
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-    border-bottom: 3px transparent solid;
-    transition: all 0.4s;
+      & ul {
+        & a {
+          @include nav-links;
 
-    &:hover {
-      border-color: $primary-color;
-      color: $secondary-color;
-    }
-  }
-  &.top {
-    background: transparent;
-  }
-}
-
-// Header
-#header {
-  &-home {
-    height: 100vh;
-    position: relative;
-    background: rgba(0, 0, 0, 0.4);
-    color: #fff;
-
-    &::before {
-      content: "";
-      background: url("../img/showcase2.jpg") no-repeat center center / cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-  }
-
-  &-content {
-    text-align: center;
-    padding-top: 17%;
-
-    & h1 {
-      font-size: 3rem;
-      line-height: 1.2;
-    }
-  }
-
-  &-inner {
-    height: 5rem;
-    background: url("../img/showcase2.jpg") no-repeat 20% 25% / cover;
-    border-bottom: 3px solid $primary-color;
-  }
-}
-
-// About
-#about {
-  padding-bottom: 10px;
-
-  &-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
-    padding: 0rem 3rem;
-    overflow: hidden;
-
-    article.show {
-      transform: none;
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  .items {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.7s ease-in-out;
-    visibility: hidden;
-    opacity: 0;
-
-    &-right {
-      transform: translateX(-200px);
-    }
-    &-left {
-      transform: translateX(200px);
-    }
-    i {
-      margin-bottom: 2rem;
-      color: $primary-color;
-    }
-    p {
-      font-size: 1.2rem;
-    }
-  }
-}
-
-// Skills Bar
-#skills {
-  margin-bottom: 2rem;
-
-  .progress {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    height: 20px;
-    background: $light-color;
-    border-radius: 5px;
-    margin-bottom: 0.3rem;
-
-    &:last-child {
-      margin-bottom: 3rem;
-    }
-
-    div {
-      height: 100%;
-      color: $light-color;
-      text-align: center;
-      background: $primary-color;
-    }
-
-    p {
-      color: green;
-      font-weight: 600;
-    }
-  }
-}
-
-// Skills Next
-#next-skills {
-  .next {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 350px;
-    grid-gap: 1rem;
-    padding: 2rem;
-    text-align: center;
-
-    &-icon {
-      border-radius: 50%;
-      background-color: $dark-color;
-      color: set-text-color($dark-color);
-      padding: 2rem;
-      width: 70px;
-      height: 70px;
-      line-height: 70px;
-      text-align: center;
-      position: relative;
-      transition: all 0.7s;
-
-      &:hover {
-        background-color: $primary-color;
-        color: set-text-color($primary-color);
-        width: 90px;
-        height: 90px;
-        line-height: 90px;
-
-        .next-step {
-          background-color: $dark-color;
-          color: set-text-color($dark-color);
+          &:hover {
+            @include nav-links-hover;
+          }
         }
       }
     }
+  }
 
-    &-step {
-      position: absolute;
-      top: 0;
-      right: 0;
-      font-size: 30px;
-      background-color: $primary-color;
-      color: set-text-color($primary-color);
-      border-radius: 50%;
-      height: 10px;
-      width: 10px;
-      line-height: 10px;
-      padding: 1rem;
-      transition: all 0.8s;
+  .logo {
+    width: 120px;
+    height: 120px;
+    margin-left: 80px;
+  }
+
+  & .header-content {
+    position: absolute;
+    left: 150px;
+    bottom: 150px;
+
+    & article {
+      width: 40%;
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 3rem;
+
+      & h3 {
+        text-shadow: 4px 4px 4px rgba($light-color, 0.4);
+      }
     }
   }
 }
 
-// Contact
-.contact-form {
-  .text-fields {
-    display: grid;
-    grid-template-areas:
-      "name email"
-      "subject phone"
-      "message message";
-    grid-gap: 1.2rem;
-    margin: 1.3rem;
+// Inner Header and About Page
 
-    // Grid Areas
-    .name-input {
-      grid-area: name;
-    }
-    .subject-input {
-      grid-area: subject;
-    }
-    .email-input {
-      grid-area: email;
-    }
-    .phone-input {
-      grid-area: phone;
-    }
-    .message-input {
-      grid-area: message;
-      height: 100px;
-    }
+#navigation-about {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: url("../img/pexels-photo.jpg") no-repeat 20% 40% / cover;
+  height: 7rem;
+  transition: 0.5s;
 
-    .text-input {
-      padding: 0.5rem 1rem;
-    }
+  & nav ul {
+    height: 7rem;
+    display: flex;
+    align-items: center;
 
-    input {
-      border: 1px solid $dark-color;
-      border-radius: 5px;
-    }
+    & a {
+      @include nav-links;
 
-    textarea {
-      border: 1px solid $dark-color;
-      border-radius: 5px;
+      &:hover {
+        @include nav-links-hover;
+      }
     }
   }
-  input:focus {
-    outline-color: $primary-color;
-  }
-  textarea:focus {
-    outline-color: $primary-color;
-  }
 
-  button[type="submit"] {
-    width: 50%;
-    font-weight: 700;
+  & .logo-about {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    align-self: center;
+    margin-left: 100px;
   }
 }
 
-.contact-details {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.about-page {
+  background: linear-gradient(to right, #2c3e50, #bdc3c7, #2c3e50);
+}
+
+.about {
+  margin-top: 25px;
+  font-size: 1.5rem;
   text-align: center;
-  color: $primary-color;
+
+  &-content {
+    & .flex-box {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+
+  &-photo {
+    width: 300px;
+    height: 300px;
+    background: url("../img/stefan1.jpg") no-repeat center 7% / cover;
+  }
+
+  &-text {
+    width: 800px;
+    height: 300px;
+    margin-left: 30px;
+    background-color: #eee;
+    border-left: 3px solid $primary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    & p {
+      font-size: 1.1rem;
+      margin: 0 15px;
+    }
+
+    & a {
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+      border: 2px solid $dark-color;
+      border-radius: 20px;
+      background-color: $primary-color;
+      color: $dark-color;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease-in;
+      box-shadow: 7px 7px 10px 5px rgba($dark-color, 0.4);
+
+      &:hover {
+        color: $primary-color;
+        background-color: $dark-color;
+        border: 2px solid $primary-color;
+        box-shadow: 7px 7px 10px 5px rgba($primary-color, 0.4);
+      }
+    }
+  }
+}
+
+.tools {
+  width: 100%;
+  height: 238px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+
+  & .left-side {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    transition: 2s ease-in;
+  }
+
+  & .right-side {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    transition: 2s ease-in;
+  }
+}
+// Projects Page
+
+.project-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/pexels-vlad-bagacian-3987066.jpg") no-repeat center 18% / cover;
+  height: 100vh;
+}
+
+.title {
+  font-size: 1.5rem;
+
+  & p {
+    color: $light-color;
+  }
+}
+
+// Contact Page
+
+.custom {
+  height: 100vh;
+
+  .contact-page {
+    width: 75vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    & .text-fields {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 0 1.5rem;
+
+      & input {
+        padding: 0.7rem 1.2rem;
+        border: 1px solid $dark-color;
+        border-radius: 7px;
+      }
+
+      & textarea {
+        grid-column: 1 / -1;
+        grid-row: 3 / span 8;
+        border: 1px solid $dark-color;
+        border-radius: 7px;
+        padding: 0.7rem 1.2rem;
+      }
+
+      & input:focus,
+      & textarea:focus {
+        outline-color: $primary-color;
+      }
+    }
+
+    & button[type="submit"] {
+      @include buttons;
+
+      &:hover {
+        border: 2px solid $dark-color;
+        background-color: $primary-color;
+        color: $dark-color;
+        font-size: 1.4rem;
+        letter-spacing: 0.6rem;
+      }
+    }
+
+    & .right-side {
+      & .contact-details {
+        height: 59.5%;
+        border-radius: 7px;
+        color: $primary-color;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        align-items: center;
+
+        & .phone {
+          border-left: 1px dotted $light-color;
+          border-right: 1px dotted $light-color;
+          height: 65%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        }
+
+        & .email,
+        .adress {
+          height: 65%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        }
+
+        & .email {
+          padding: 0 10px;
+        }
+      }
+
+      & a {
+        @include buttons;
+        text-decoration: none;
+        text-align: center;
+
+        &:hover {
+          border: 2px solid $dark-color;
+          background-color: $primary-color;
+          color: $dark-color;
+          font-size: 1.4rem;
+          letter-spacing: 0.6rem;
+        }
+      }
+    }
+  }
 }
 
 // Footer
 
-#main-footer {
-  color: $light-color;
-  height: 5rem;
-
-  .footer-content {
+.footer {
+  &-content {
     display: flex;
     justify-content: space-between;
     height: 5rem;
     align-items: center;
-    p {
-      margin-left: 3rem;
-    }
   }
-  .footer-social {
-    margin-right: 2rem;
 
-    .fab {
+  &-social {
+    width: 35%;
+    display: flex;
+    justify-content: space-evenly;
+
+    & a span {
       color: $light-color;
       margin-right: 1rem;
       border: 2px $light-color solid;
@@ -342,17 +328,16 @@ img {
       height: 20px;
       width: 20px;
       line-height: 20px;
-      text-align: center;
       padding: 0.5rem;
-      transition: all 0.5s;
+      text-align: center;
+      transition: 0.5s ease;
 
       &:hover {
-        background: $primary-color;
+        background-color: $primary-color;
+        color: $dark-color;
       }
     }
   }
 }
 
-// Import Media
-
-@import "media";
+@import "media_queries";
